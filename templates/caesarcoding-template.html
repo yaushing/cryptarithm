@@ -1,0 +1,38 @@
+{% extends 'base-template.html' %} {%block head%} Encode {%endblock%} {%block
+content%}
+<div class="container-fluid">
+  <form method="POST" enctype="multipart/form-data">
+    <h3>Message Encoder</h3>
+    <div class="form-group col-sm-12">
+      <!-- <label class="form-label">Message to be Encoded </label> -->
+      <textarea
+        name="mtocencode"
+        class="form-control form-control-sm"
+        placeholder="Enter text message to be encoded"
+      ></textarea>
+    </div>
+    <div class="form-group col-sm-8 mt-3">
+      <label class="form-label">Key</label><br>
+      <input type="text" name="keytocencode" placeholder="Key to encode" />
+    </div>
+    <div class="btns">
+      <a href="{{ url_for('index') }}" class="btn btn-outline-dark mt-3"
+        >Back</a
+      >
+      <input type="submit" value="Encode" class="btn btn-dark mt-3" />
+    </div>
+  </form>
+ <!-- {% if cencodedmsg %} -->
+  <div class="container card-container">
+    <h5>Your Encoded Message</h5>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text text-muted">{{cencodedmsg}}</p>
+        <h6 class="card-subtitle mb-2">Key to Unlock: {{ keytocencode }}</h6>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{%endblock%}

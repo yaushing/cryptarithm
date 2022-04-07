@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block head %} {% endblock %}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img id ="logo"
+            src="{{ url_for('static',filename='images/ra.png') }}"
+            alt="logo"
+          />
+        </a>
+        <nav class="nav navbar-dark bg-dark justify-content-end">
+          <a class="nav-link" href="{{ url_for('encode_form') }}">Encoder</a>
+          <a class="nav-link" href="{{ url_for('decode_form') }}">Decoder</a>
+        </nav>
+      </div>
+    </nav>
+    
+    {% block content %} {% endblock %}
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+      <div class="container-fluid">
+        <footer class="text-center">
+          &copy; {{year}} KAM PROPERTY Pte Ltd. All Rights Reserved.
+        </footer>
+      </div>
+    </nav>
+  </body>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{{ url_for('static',filename='js/copynpaste.js') }}"></script>
+</html>

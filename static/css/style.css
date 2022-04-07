@@ -1,0 +1,90 @@
+body {
+  color: orange;
+  background-color: lightslategray;
+  font-size: calc(14px + 0.3vw);
+}
+
+#logo {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 8px;
+}
+
+.container-fluid {
+  padding: 10px 18px;
+}
+
+.navbar {
+  height: 90px;
+}
+
+.nav-link {
+  color: orange;
+}
+
+.nav-link:hover {
+  color: darkorange
+}
+
+div.btns {
+  float: right !important;
+}
+
+.card-container {
+  margin-top: 80px;
+}
+
+.card {
+  min-width: 21rem;
+  max-width: 28rem;
+}
+
+.card-text {
+  font-size: calc(14px + 0.3vw);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Height of the footer */
+}
+
+/* Copy to clipboard */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
